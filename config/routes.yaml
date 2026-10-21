@@ -9,3 +9,12 @@
 
 controllers:
     resource: routing.controllers
+
+about:
+    path: /about
+
+    controller: App\Controller\DefaultController::about
+
+hello_wild:
+    path: /hello/{name}
+    controller: App\Controller\DefaultController::hello_wild

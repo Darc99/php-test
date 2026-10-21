@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Contacts</h1>
+
+    <table>
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Email</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for contact in contacts %}
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td>{{ contact.name }}</td>
+                <td><a href="mailto:{{ contact.email }}">{{ contact.email }}</a></td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">No contacts found.</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

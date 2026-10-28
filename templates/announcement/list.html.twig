@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}All announcements{% endblock %}
+
+{% block body %}
+    <h1>Announcements</h1>
+    {% for announcement in announcements %}
+        <article>
+            <p>{{ announcement.message }}</p>
+            <small>
+                {{ announcement.timestamp|date('d M Y, H:i') }}
+                · <a href="{{ path('announcement_show', {id: announcement.id}) }}">view</a>
+            </small>
+        </article>
+    {% else %}
+        <p>No announcements yet.</p>
+    {% endfor %}
+{% endblock %}

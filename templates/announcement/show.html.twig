@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Announcement #{{ announcement.id }}{% endblock %}
+
+{% block body %}
+    <h1>Announcement #{{ announcement.id }}</h1>
+    <p>{{ announcement.message }}</p>
+    <small>Posted {{ announcement.timestamp|date('d M Y, H:i') }}</small>
+    <p><a href="{{ path('announcement_list') }}">Back to all announcements</a></p>
+{% endblock %}
